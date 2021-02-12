@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclos</title>
+</head>
+<body>
+
+    <div id="demo"></div>
+    
+    <script>
+        // ciclo for
+        for (let paso = 0; paso < 6; paso++) {
+            console.log("paso: "+paso);
+        }
+
+        // ciclo while
+        var n = 0, x = 0;
+        while (n < 3){
+            n++;
+            x += n;
+            console.log(x);
+        }
+
+        // do while
+        var i = 0;
+        do{
+            console.log(i++);
+        }while(i < 5);
+
+
+        // iterador foreach
+        var txt = "";
+        var numbers =  [45, 2, 3.5, 6, 10];
+        numbers.forEach(myfunction);
+
+        document.getElementById('demo').innerHTML = txt;
+
+        function myfunction(value, index, array) {
+            txt = txt + value + "<br>"; 
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+</head>
+<body>
+    <button onclick="asignarFecha()">Da clic</button>
+    <p id="demo"></p>
+
+    <input type="text" id="original" onkeyup="duplicar()">
+    <input type="text" id="copia"><br><br>
+
+    <div style="background-color: red; width: 100px; height: 100px;" onmouseover="mOver(this)" onmouseout="mOut(this)">
+        Doom
+    </div>
+
+    <div style="background-color: blue; width: 100px; height: 100px;" onmousedown="mOver(this)" onmouseup="mOut(this)">
+        Doom
+    </div>
+
+    <script>
+
+        // onclick
+        function asignarFecha(){
+            document.getElementById('demo').innerHTML = Date();
+        }
+
+        function duplicar(){
+            let original = document.getElementById('original').value;
+            document.getElementById('copia').value = original;
+        }
+
+        function mOver(obj){
+            obj.innerHTML = 'Slayer'
+        }
+
+        function mOut(obj){
+            obj.innerHTML = 'Doom'
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transiciones</title>
+
+    <style>
+        div {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            transition: 3s;
+        }
+        
+        .a{
+            transition-timing-function: linear;
+        }
+
+        .b{
+            transition-timing-function: ease;
+        }
+
+        .c{
+            transition-timing-function: ease-in;
+        }
+
+        .d{
+            transition-timing-function: ease-out;
+        }
+
+        .f{
+            transition-timing-function: ease-in-out;
+        }
+
+        div:hover {
+            width: 500px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <p>pon ekl cursor sobre el cuadro rojo</p>
+    <div class="a">linear</div>
+    <div class="b">ease</div>
+    <div class="c">ease-in</div>
+    <div class="d">ease-out</div>
+    <div class="f">ease-in-out</div>
+</body>
+</html>

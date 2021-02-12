@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <form action="./action_page.html" method="POST">
+
+        <fieldset>
+            <legend>Formulario  </legend>
+
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" name="nombre" id="nombre" value="Walter"><br>
+            <label for="apellido">Apellido:</label><br>
+            <input type="text" name="apellido" id="apellido" value="White">
+            <br><br>
+    
+            <!-- input de tipo select -->
+            <select name="carros">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saap</option>
+                <option value="fiat">Fiat</option>
+                <option value="audi">Audi</option>
+            </select><br><br>
+    
+            <!-- textarea -->
+            <textarea name="mensaje" cols="30" rows="10">
+                Los pollos hermanos!
+            </textarea><br><br>
+
+            <!--  radio buttom -->
+            <p>Seleccione un género</p>
+            <input type="radio" name="genero" id="hombre" value="hombre">
+            <label for="hombre">Hombre</label><br>
+            <input type="radio" name="genero" id="mujer" value="mujer">
+            <label for="mujer">Mujer</label><br><br>
+
+            <!-- checkbox -->
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bici">
+            <label for="vehicle1"> Tengo una bici</label><br>
+            <input type="checkbox" id="vehicle2" name="vehicle2" value="Carro">
+            <label for="vehicle2"> Tengo un carro</label><br>
+            <input type="checkbox" id="vehicle3" name="vehicle3" value="Bote">
+            <label for="vehicle3"> Tengo un bote</label><br><br>
+    
+            <input type="submit" value="Guardar">
+            <button type="button" onclick="alert('Hello Walter')">Da clic!</button>
+        </fieldset>
+        
+    </form>
+</body>
+</html>

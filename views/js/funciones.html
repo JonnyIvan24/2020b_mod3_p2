@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones</title>
+</head>
+<body>
+
+    <div id="demo"></div>
+    
+    <script>
+        var num1 = 2, num2 = 3;
+
+        console.log("Suma: " + suma(num1, num2));
+        console.log("Resta: " + resta(num1, num2));
+        console.log("Resta: " + resta(num2, num1));
+        console.log("Multiplicación: " + multiplicacion());
+        console.log("División: " + division(10, 5));
+        
+        
+        // función común  
+        function suma(a, b){
+            return a+b;
+        }
+
+        function resta (a, b){
+            return a-b;
+        }
+
+        function multiplicacion(){
+            return num1*num2;
+        }
+
+        // variables globales y local
+        function division(num1, num2){
+            return num1/this.num1;
+        }
+
+        // tipos de funciones
+        var txt = "";
+        var numbers =  [45, 2, 3.5, 6, 10];
+
+        // función anonima
+        numbers.forEach(function(value, index, array){
+            txt = txt + value + "<br>";
+        });
+
+        // función de flecha
+        numbers.forEach((value, index, array) => {
+            txt = txt + value + "<br>";
+        });
+
+        document.getElementById('demo').innerHTML = txt;
+
+              
+
+    </script>
+</body>
+</html>

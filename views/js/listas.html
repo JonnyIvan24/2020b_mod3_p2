@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas</title>
+</head>
+<body>
+    <div id="demo"></div>
+    <script>
+        var nombre = "Frank"
+        var lista = ["pera", 10, nombre, null, "barcelona"];
+
+        console.log(lista);
+        console.log(lista[2]);
+        console.log(lista.length);
+        console.log(lista[lista.length -1]);
+
+
+        var frutas = ['platano', 'naranja'];
+        var ultimo = frutas.pop()
+        console.log(ultimo);
+        document.getElementById('demo').innerHTML = frutas.toString();
+
+        var nums = [45, 5, 50, 10];
+        var filtrado = nums.filter((value, index, array) => {
+            return value > 18;
+        });
+        console.log(filtrado);
+
+        // ordenamiento
+        var letras = ['a', 'c', 'b', 'j'];
+        console.log(letras);
+        console.log(letras.sort());
+        console.log(letras.reverse());
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splice</title>
+</head>
+<body>
+    <h2>splice()</h2>
+
+    <button onclick="myFunction()">Clic</button>
+
+    <button onclick="deleteSecond()">Eliminar el segundo elemento de la lista</button>
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo1").innerHTML = "Arreglo original:<br>" + fruits;
+
+        function myFunction(){
+            var removed = fruits.splice(2, 2, "Lemon", "kiwi");
+            document.getElementById("demo2").innerHTML = "Nuevo arreglo:<br>" + fruits;
+            document.getElementById("demo3").innerHTML = "Items eliminados:<br>" + removed;
+        }
+
+        // eliminar el segundo elemento o item de la lista fruits, con el uso de splice
+        function deleteSecond(){
+            var removed = fruits.splice(2, 1);
+            document.getElementById("demo2").innerHTML = "Nuevo arreglo:<br>" + fruits;
+            document.getElementById("demo3").innerHTML = "Item eliminado:<br>" + removed;
+        }
+
+    </script>
+</body>
+</html>
