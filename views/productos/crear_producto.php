@@ -2,6 +2,15 @@
 include('../../layout/header.php');
 include('../../layout/sidebar.php');
 include('../../layout/navbar.php');
+include('../../src/conf.php');
+
+if($conexion){
+  $consulta = "SELECT * FROM categoria";
+  $datos = mysqli_query($conexion,$consulta);
+}else{
+  echo "No me pude conectar ".mysqli_error($conexion);
+}
+
 ?>
 
       <div class="content">
@@ -20,12 +29,19 @@ include('../../layout/navbar.php');
                     <div class="card-body">
                       <h3>Guardar un nuevo producto</h3>
 
-                      <form action="lista.html" method="POST">
+                      <form action="../../src/servicios/productos/crear_producto.php" method="POST">
 
                           <div class="for-row">
                               <div class="form-group">
                                   <label for="nombre">Nombre:</label>
                                   <input type="text" name="nombre" class="form-control">
+                              </div>
+                          </div>
+
+                          <div class="for-row">
+                              <div class="form-group">
+                                  <label for="descripcion">Descripcion:</label>
+                                  <input type="text" name="descripcion" class="form-control">
                               </div>
                           </div>
                           
@@ -34,15 +50,17 @@ include('../../layout/navbar.php');
                                   <label for="categoria">Categoría</label>
                                   <select class="form-control" name="categoria" >
                                       <option value="">Selecciona una categoría...</option>
-                                      <option value="refrescos">Refrescos</option>
-                                      <option value="carnes_frias">Carnes frías</option>
-                                      <option value="herramientas">Herramientas</option>
+                                      <?php
+                                      while ($fila = mysqli_fetch_assoc($datos)){
+                                        echo '<option value="'.$fila['id'].'">'.$fila['nombre'].'</option>';
+                                      }
+                                      ?>
                                   </select>
                                 </div>
                               
                               <div class="form-group col-md-4">
                                   <label for="precio">Precio:</label>
-                                  <input class="form-control" type="text" name="precio" value="10">
+                                  <input class="form-control" type="text" name="precio">
                               </div>
                   
                               <div class="form-group col-md-2">
