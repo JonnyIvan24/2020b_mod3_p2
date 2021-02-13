@@ -5,7 +5,7 @@ include('../../layout/navbar.php');
 include('../../src/conf.php');
 
 if($conexion){
-  $consulta = "SELECT * FROM producto";
+  $consulta = "SELECT producto.*, categoria.nombre as categoria_nombre FROM producto INNER JOIN categoria ON categoria.id = producto.categoria_id";
   $datos = mysqli_query($conexion,$consulta);
 }else{
   echo "No me pude conectar ".mysqli_error($conexion);
@@ -35,6 +35,7 @@ if($conexion){
                                   <th>Descripción</th>
                                   <th>Precio</th>
                                   <th>Stock</th>
+                                  <th>Categoría</th>
                                   <th>Acciones</th>
                               </tr>
                           </thead>
@@ -47,8 +48,9 @@ if($conexion){
                               <td>".$fila["descripcion"]."</td>
                               <td>".$fila["precio"]."</td>
                               <td>".$fila["stock"]."</td>
-                              <td><a href='delete.php?id=".$fila['id']."'>Eliminar</a>
-                              <a href='editar_producto.php?id=".$fila['id']."'>Editar</a></td>
+                              <td>".$fila["categoria_nombre"]."</td>
+                              <td><button class='btn btn-danger' onclick='eliminar(".$fila["id"].")'>Eliminar</button>
+                              <a class='btn btn-success' href='editar_producto.php?id=".$fila['id']."'>Editar</a></td>
                             </tr>";
                           }
                           ?>
@@ -63,7 +65,27 @@ if($conexion){
             <!-- End content -->
           </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script>
 
+          function eliminar(id){
+            Swal.fire({
+            title: '¿Está seguro ded eliminar el producto?',
+            text: "Esta acción es irreversible",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, eliminar',
+            cancelButtonText: 'Cancelar'
+            }).then((result) => {
+              if (result.isConfirmed) {
+                window.location.href = "../../src/servicios/productos/eliminar.php?id="+id;
+              }
+            })
+          }
+          
+        </script>
 <?php
 include('../../layout/footer.php');
 ?>
