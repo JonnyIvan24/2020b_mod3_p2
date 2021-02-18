@@ -27,6 +27,21 @@
               <p>Lista de productos</p>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="../tiendas/crear.php">
+              <i class="material-icons">add</i>
+              <p>Crear tienda</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="../tiendas/lista.php">
+              <i class="material-icons">list</i>
+              <p>Lista de tiendas</p>
+            </a>
+          </li>
+
         </ul>
       </div>
     </div>
